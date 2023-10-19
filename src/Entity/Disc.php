@@ -14,10 +14,25 @@ class Disc
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $title = null;
+    private ?string $disc_title = null;
 
-    #[ORM\Column(length: 255, nullable: true)]
-    private ?string $picture = null;
+    #[ORM\Column(length: 255)]
+    private ?string $disc_year = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $disc_picture = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $disc_label = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $disc_genre;
+
+    #[ORM\Column(length: 255)]
+    private ?string $disc_price = null;
+
+    #[ORM\Column]
+    private ?int $artist_id = null;
 
     #[ORM\ManyToOne(inversedBy: 'discs')]
     private ?Artist $artist = null;
@@ -27,26 +42,86 @@ class Disc
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getDiscTitle(): ?string
     {
-        return $this->title;
+        return $this->disc_title;
     }
 
-    public function setTitle(string $title): static
+    public function setDiscTitle(string $disc_title): static
     {
-        $this->title = $title;
+        $this->disc_title = $disc_title;
 
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function getDiscYear(): ?string
     {
-        return $this->picture;
+        return $this->disc_year;
     }
 
-    public function setPicture(?string $picture): static
+    public function setDiscYear(string $disc_year): static
     {
-        $this->picture = $picture;
+        $this->disc_year = $disc_year;
+
+        return $this;
+    }
+
+    public function getDiscPicture(): ?string
+    {
+        return $this->disc_picture;
+    }
+
+    public function setDiscPicture(string $disc_picture): static
+    {
+        $this->disc_picture = $disc_picture;
+
+        return $this;
+    }
+
+    public function getDiscLabel(): ?string
+    {
+        return $this->disc_label;
+    }
+
+    public function setDiscLabel(string $disc_label): static
+    {
+        $this->disc_label = $disc_label;
+
+        return $this;
+    }
+
+    public function getDiscGenre(): ?string
+    {
+        return $this->disc_genre;
+    }
+
+    public function setDiscGenre(string $disc_genre): static
+    {
+        $this->disc_genre = $disc_genre;
+
+        return $this;
+    }
+
+    public function getDiscPrice(): ?string
+    {
+        return $this->disc_price;
+    }
+
+    public function setDiscPrice(string $disc_price): static
+    {
+        $this->disc_price = $disc_price;
+
+        return $this;
+    }
+
+    public function getArtistId(): ?int
+    {
+        return $this->artist_id;
+    }
+
+    public function setArtistId(int $artist_id): static
+    {
+        $this->artist_id = $artist_id;
 
         return $this;
     }
