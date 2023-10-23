@@ -5,6 +5,9 @@ twig:
     paths:
         # pointe vers votre dossier d'images
         '%kernel.project_dir%/public/picture': images
+            paths:
+        # point this wherever your css files live
+        '%kernel.project_dir%/assets/styles': styles
 when@test:
     twig:
         strict_variables: true
