@@ -12,11 +12,11 @@
    <h1>Welcome {{ email.toName }}!</h1>
 
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/naouel/Bureau/monProjetSym2/src/Controller/MailerController.php'|file_link(0) }}">src/Controller/MailerController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/naouel/Bureau/monProjetSym2/templates/mailer/index.html.twig'|file_link(0) }}">templates/mailer/index.html.twig</a></code></li>
-    </ul>
+  {# templates/emails/contact_email.html.twig #}
+
+<p>Adresse mail : {{ adresse_mail }}</p>
+<p>Sujet : {{ sujet }}</p>
+<p>Message : {{ message }}</p>
 
 <img src="{{ email.image('@images/Beggars Banquet.jpeg') }}" alt="Logo">
 

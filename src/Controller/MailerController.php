@@ -12,6 +12,8 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Mime\Part\DataPart;
 use Symfony\Component\Mime\Part\File;
 
+use Symfony\Component\HttpFoundation\Request;
+
 
 class MailerController extends AbstractController
 {
