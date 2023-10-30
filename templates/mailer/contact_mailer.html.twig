@@ -1,0 +1,14 @@
+{# templates/emails/contact_email.html.twig #}
+{% block body %}
+<div>
+<p>Objet : {{ objet }}</p>
+<h1>Adresse email : {{ userEmail }}</h1>
+
+
+
+<h2>Message :
+{{ message }}
+</h2>
+<img src="{{ email.image('@images/Beggars Banquet.jpeg') }}" alt="Logo">
+</div>
+{% endblock %}
