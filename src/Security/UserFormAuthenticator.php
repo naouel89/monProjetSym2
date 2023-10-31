@@ -41,12 +41,13 @@ class UserFormAuthenticator extends AbstractLoginFormAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
+        //s'il y a une route dans la session avant login, l'utilisateur sera redirigé vers cette route
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
             return new RedirectResponse($targetPath);
         }
 
-        // For example:
-        // return new RedirectResponse($this->urlGenerator->generate('some_route'));
+        // sinon, on l'envoie sur la page `profil`
+        return new RedirectResponse($this->urlGenerator->generate('app_profil'));
         throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
 
