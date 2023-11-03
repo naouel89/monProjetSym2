@@ -101,6 +101,7 @@ class ContactController extends AbstractController
     #[Route('/contact', name: 'app_contact')]
     public function index(Request $request, EntityManagerInterface $entityManager, MailerInterface $mailer, MailService $ms): Response
     {
+        
         $form = $this->createForm(ContactFormType::class);
         $form->handleRequest($request);
 
